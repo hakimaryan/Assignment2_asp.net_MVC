@@ -214,7 +214,7 @@
     <Content Include="Views\Account\Manage.cshtml" />
     <Content Include="Views\Account\Register.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\Home\Find-a-pet.cshtml" />
+    <Content Include="Views\Home\Find.cshtml" />
     <Content Include="Views\Home\Advise.cshtml" />
   </ItemGroup>
   <ItemGroup>

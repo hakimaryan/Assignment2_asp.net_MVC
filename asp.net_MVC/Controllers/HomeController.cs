@@ -26,5 +26,19 @@ namespace asp.net_MVC.Controllers
 
             return View();
         }
+
+        public ActionResult Advise()
+        {
+            ViewBag.Message = "Your advise page.";
+
+            return View();
+        }
+
+        public ActionResult Find()
+        {
+            ViewBag.Message = "Find a pet page.";
+
+            return View();
+        }
     }
 }
