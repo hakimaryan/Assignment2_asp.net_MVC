@@ -1,0 +1,1304 @@
+﻿@{
+    ViewBag.Title = "Find";
+}
+<h2>@ViewBag.Title.</h2>
+<h3>@ViewBag.Message</h3>
+
+<address>
+    One Microsoft Way<br />
+    Redmond, UK LS1 1PP<br />
+    <abbr title="Phone">Phone:</abbr>
+    01132-000000
+</address>
+
+<address>
+    <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
+    <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
+</address>
+
+
+
+
+
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6 lte7 lte8 lte9"><![endif]-->
+<!--[if IE 7 ]><html class="ie ie7 lte7 lte8 lte9"><![endif]-->
+<!--[if IE 8 ]><html class="ie ie8 lte8 lte9"><![endif]-->
+<!--[if IE 9 ]><html class="ie ie9 lte9"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+<html>
+<!--<![endif]-->
+<head>
+    <script type="text/javascript">
+        var pfjs = pfjs ? pfjs : {}
+        pfjs.photo_host = 'drpem3xzef3kf.cloudfront.net'
+    </script>
+    <script type="text/javascript" src="//nexus.ensighten.com/purina/Bootstrap.js"></script>
+
+    <meta charset="UTF-8" />
+
+
+    <meta name="viewport" content="width=998">
+
+    <link rel="pingback" href="https://www.petfinder.com/xmlrpc.php" />
+
+
+    <!-- Global Vars -->
+    <script type="text/javascript">
+        var featuredPetAdLoaded = false;
+        var happyTailAdLoaded = false;
+    </script>
+    <!-- End Global Vars -->
+
+    <style id="antiClickjack">
+        body {
+            display: none !important;
+        }
+    </style>
+    <script type="text/javascript">
+        if (self === top) {
+            var antiClickjack = document.getElementById("antiClickjack");
+            antiClickjack.parentNode.removeChild(antiClickjack);
+        } else {
+            top.location = self.location;
+        }
+    </script>
+
+    <script type='text/javascript'>var ajaxURL='https://www.petfinder.com/wp-admin/admin-ajax.php';</script>
+    <!-- This site is optimized with the Yoast SEO plugin v2.3.5 - https://yoast.com/wordpress/plugins/seo/ -->
+    <title>Helping Pets - Petfinder</title>
+    <link rel="canonical" href="https://www.petfinder.com/helping-pets/" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Helping Pets - Petfinder" />
+    <meta property="og:url" content="https://www.petfinder.com/helping-pets/" />
+    <meta property="og:site_name" content="Petfinder" />
+    <meta property="fb:app_id" content="1650864228532522" />
+    <meta property="og:image" content="https://www.petfinder.com/wp-content/uploads/2012/12/how-to-adopt-a-dog.jpeg" />
+    <!-- / Yoast SEO plugin. -->
+
+    <link rel="alternate" type="application/rss+xml" title="Petfinder &raquo; Helping Pets Comments Feed" href="https://www.petfinder.com/helping-pets/feed/" />
+    <script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/72x72\/","ext":".png","source":{"concatemoji":"https:\/\/www.petfinder.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.3.1"}};
+			!function(a,b,c){function d(a){var c=b.createElement("canvas"),d=c.getContext&&c.getContext("2d");return d&&d.fillText?(d.textBaseline="top",d.font="600 32px Arial","flag"===a?(d.fillText(String.fromCharCode(55356,56812,55356,56807),0,0),c.toDataURL().length>3e3):(d.fillText(String.fromCharCode(55357,56835),0,0),0!==d.getImageData(16,16,1,1).data[0])):!1}function e(a){var c=b.createElement("script");c.src=a,c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g;c.supports={simple:d("simple"),flag:d("flag")},c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.simple&&c.supports.flag||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+    </script>
+    <style type="text/css">
+        img.wp-smiley,
+        img.emoji {
+            display: inline !important;
+            border: none !important;
+            box-shadow: none !important;
+            height: 1em !important;
+            width: 1em !important;
+            margin: 0 .07em !important;
+            vertical-align: -0.1em !important;
+            background: none !important;
+            padding: 0 !important;
+        }
+    </style>
+    <link rel='stylesheet' id='js/src/lib-thirdparty/jquery-plugins/fancybox/helpers/fancybox-thumbs.min.css-css' href='https://www.petfinder.com/wp-content/themes/petfinder2013/js/src/lib-thirdparty/jquery-plugins/fancybox/helpers/fancybox-thumbs.min.css?ver=1.1' type='text/css' media='all' />
+    <link rel='stylesheet' id='js/src/lib-thirdparty/jquery-plugins/fancybox/fancybox.min.css-css' href='https://www.petfinder.com/wp-content/themes/petfinder2013/js/src/lib-thirdparty/jquery-plugins/fancybox/fancybox.min.css?ver=1.1' type='text/css' media='all' />
+    <link rel='stylesheet' id='js/src/lib-thirdparty/jquery-plugins/royalslider/royalslider-1.min.css-css' href='https://www.petfinder.com/wp-content/themes/petfinder2013/js/src/lib-thirdparty/jquery-plugins/royalslider/royalslider-1.min.css?ver=1.1' type='text/css' media='all' />
+    <link rel='stylesheet' id='js/src/lib-thirdparty/jquery-plugins/royalslider/petfinder/rs-petfinder.min.css-css' href='https://www.petfinder.com/wp-content/themes/petfinder2013/js/src/lib-thirdparty/jquery-plugins/royalslider/petfinder/rs-petfinder.min.css?ver=1.1' type='text/css' media='all' />
+    <link rel='stylesheet' id='css/styles.min.css-css' href='https://www.petfinder.com/wp-content/themes/petfinder2013/css/styles.min.css?ver=1.1' type='text/css' media='all' />
+    <link rel='stylesheet' id='style.min.css-css' href='https://www.petfinder.com/wp-content/themes/petfinder2013/style.min.css?ver=1.1' type='text/css' media='all' />
+    <link rel='stylesheet' id='css/rebuildStyle.css-css' href='https://www.petfinder.com/wp-content/themes/petfinder2013/css/rebuildStyle.css?ver=1.1' type='text/css' media='all' />
+    <script type='text/javascript' src='https://www.petfinder.com/wp-includes/js/jquery/jquery.js?ver=1.11.3'></script>
+    <script type='text/javascript' src='https://www.petfinder.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.2.1'></script>
+    <link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www.petfinder.com/xmlrpc.php?rsd" />
+    <link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://www.petfinder.com/wp-includes/wlwmanifest.xml" />
+
+    <link rel='shortlink' href='https://www.petfinder.com/?p=83' />
+    <script type="text/javascript" src="//platform.twitter.com/widgets.js"></script>
+    <script type="text/javascript" async src="https://assets.pinterest.com/js/pinit.js"></script>	<!-- Include google_services.js -->
+    <script type='text/javascript'>
+var googletag = googletag || {};
+googletag.cmd = googletag.cmd || [];
+(function() {
+var gads = document.createElement('script');
+gads.async = true;
+gads.type = 'text/javascript';
+var useSSL = 'https:' == document.location.protocol;
+gads.src = (useSSL ? 'https:' : 'http:') +
+'//www.googletagservices.com/tag/js/gpt.js';
+var node = document.getElementsByTagName('script')[0];
+node.parentNode.insertBefore(gads, node);
+})();
+    </script>
+    <script type='text/javascript'>
+googletag.cmd.push(function() {
+googletag.defineSlot('/46267414/Petfinder/Helping_Pets', [728, 90], "acm-ad-tag-leaderboard-helping-pets").addService(googletag.pubads());
+googletag.defineSlot('/46267414/Petfinder/Helping_Pets', [300, 250], "acm-ad-tag-medium-rectangle-helping-pets").addService(googletag.pubads());
+googletag.pubads().enableAsyncRendering();
+googletag.pubads().collapseEmptyDivs();
+googletag.enableServices();
+});
+    </script>
+
+</head>
+
+<body class="page page-id-83 page-parent page-template page-template-page-category page-template-page-category-php">
+
+    <!-- Facebook SDK -->
+    <div id="fb-root"></div>
+    <script type="text/javascript">
+
+    /* New Facebook Script */
+    window.fbAsyncInit = function() {
+        // init the FB JS SDK
+        FB.init({
+            appId      : '1650864228532522', // App ID from the App Dashboard
+            version    : 'v2.5',
+            status     : true, // check the login status upon init?
+            cookie     : true, // set sessions cookies to allow your server to access the session?
+            xfbml      : true  // parse XFBML tags on this page?
+        });
+    };
+
+    // Load the SDK's source Asynchronously
+    // Note that the debug version is being actively developed and might
+    // contain some type checks that are overly strict.
+    // Please report such bugs using the bugs tool.
+    (function(d, s, id){
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) {return;}
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+    /* end new facebook script */
+
+
+    </script>
+    <div class="nrd-helloBar-container js-helloBar-insertionPoint"></div>
+    <div class="container">
+
+        <div class="ad ad-banner" id="ad-TopLeft">
+
+            <div id='acm-ad-tag-leaderboard-helping-pets' style='width:728px; height:90px;'>
+                <script type='text/javascript'>
+googletag.cmd.push(function() { googletag.display('acm-ad-tag-leaderboard-helping-pets'); });
+                </script>
+            </div>
+        </div><!-- /#top-ad -->
+
+        <header id="header" role="banner" class="header-site clearfix content-box">
+            <nav class="nav nav-overall">
+
+                <!-- This Navigation element appears in both the site header and footer -->
+
+                <ul id="js-header-userMenu" class="nav-site-toggle">
+
+                    <li class="your-profile frm-purple">
+                        <div class="frame" name="_profile_widget">
+                            <a href="#" class="link-block with-icon signin" onclick="purinaTrackEvent('','sign in','go to login or registration modal widow')">
+                                Sign In<span class="psdui-arrow"></span>
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+
+            </nav>
+
+            <div id="tophat-follow-us" class="mfp columns ">
+                <h4>Follow Us</h4>
+                <ul class="follow-icons">
+                    <li class="fb"><a href="http://www.facebook.com/Petfinder " target="_blank"></a></li>
+                    <li class="twt"><a href="http://twitter.com/Petfinder" target="_blank"></a></li>
+                    <li class="pin"><a href="http://pinterest.com/petfinder/ " target="_blank"></a></li>
+                    <!--<li class="yt"><a href="http://www.youtube.com/user/petfinderfoundation" target="_blank"></a></li>-->
+
+                    <li class="e">
+                        <a href="https://profiles.petfinder.com/subscription/subscribe/brand/PF" target="_blank" data-category="email sign up" data-action="initiate new sign up">&nbsp;</a>
+                    </li>
+
+                </ul>
+            </div><!-- /#tophat-follow-us -->
+            <div class="site-header row" id="logo-tagline">
+                <div class="site-title eight columns alpha">
+                    <div id="title-wrapper">
+                        <h1><a href="/" data-category="global-nav" data-action="petfinder logo" title="Petfinder Home"><img src="https://www.petfinder.com/wp-content/themes/petfinder2013/img/pet_finder_logo.png" width="189" height="48" alt="petfinder logo"></a></h1>
+                    </div>
+                    <p class="tagline">Home of <span id="welcome-pet-total" data-id="pet-total"></span> adoptable pets from <span id="welcome-shelter-total" data-id="shelter-total"></span> adoption groups.</p>
+                </div>
+            </div><!-- /#logo-tagline -->
+            <nav class="nav nav-site">
+                <div class="nav-find-a-pet open">
+                    <p>
+                        <a style="cursor:default;">Find a Pet to Adopt</a>
+                        <!-- <a class="fap-toggle"> </a> -->
+                    </p>
+                </div>
+                <ul id="local-nav" class="sf-menu nine columns alpha">
+                    <li id="menu-item-13761" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-13761">
+                        <a href="/pet-adoption/" data-category="global-nav" data-action="about-pet-adoption">About Pet Adoption</a>
+                        <ul class="sub-menu">
+                            <li id="menu-item-16283" class="heading menu-item menu-item-type-custom menu-item-object-custom menu-item-16283"><a href="/pet-adoption/" data-category="global-nav" data-action="adoption-centers">Adoption Centers</a></li>
+                            <li id="menu-item-13762" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-13762"><a href="/pet-adoption/dog-adoption/" data-category="global-nav" data-action="dog-adoption">Dog Adoption</a></li>
+                            <li id="menu-item-13763" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-13763"><a href="/pet-adoption/cat-adoption/" data-category="global-nav" data-action="cat-adoption">Cat Adoption</a></li>
+                            <li id="menu-item-13764" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-13764"><a href="/pet-adoption/other-pet-adoption/" data-category="global-nav" data-action="other-pet-adoption">Other Pet Adoption</a></li>
+                            <li id="menu-item-15621" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-15621"><a href="/adoption-stories/" data-category="global-nav" data-action="happy-tails-pet-adoption-stories">Happy Tails Pet Adoption Stories</a></li>
+                            <li id="menu-item-15620" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-15620"><a href="https://www.petfinder.com/pet-adoption/pet-adoption-information/" data-category="global-nav" data-action="pet-adoption-information">Pet Adoption Information</a></li>
+                            <li id="menu-item-15631" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-15631"><a href="/pet-adoption/exotic-pets/" data-category="global-nav" data-action="exotic-pets">Exotic Pets</a></li>
+                            <li id="menu-item-16284" class="footer menu-item menu-item-type-custom menu-item-object-custom menu-item-16284"><a href="/pet-adoption/" data-category="global-nav" data-action="more-about-pet-adoption">More About Pet Adoption</a></li>
+                        </ul>
+                    </li>
+                    <li id="menu-item-13766" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-13766">
+                        <a href="/dogs/" data-category="global-nav" data-action="dog-care">Dog Care</a>
+                        <ul class="sub-menu">
+                            <li id="menu-item-16285" class="heading menu-item menu-item-type-custom menu-item-object-custom menu-item-16285"><a href="/dogs/" data-category="global-nav" data-action="dog-care-centers">Dog Care Centers</a></li>
+                            <li id="menu-item-13767" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-13767"><a href="/pet-adoption/dog-adoption/" data-category="global-nav" data-action="dog-adoption">Dog Adoption</a></li>
+                            <li id="menu-item-15636" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-15636"><a href="/dog-breeds/" data-category="global-nav" data-action="dog-breeds">Dog Breeds</a></li>
+                            <li id="menu-item-15638" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-15638"><a href="/dogs/bringing-a-dog-home/" data-category="global-nav" data-action="bringing-a-dog-home">Bringing a Dog Home</a></li>
+                            <li id="menu-item-15640" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-15640"><a href="/dogs/dog-training/" data-category="global-nav" data-action="dog-training">Dog Training</a></li>
+                            <li id="menu-item-15642" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-15642"><a href="/dogs/dog-problems/" data-category="global-nav" data-action="dog-problems">Dog Problems</a></li>
+                            <li id="menu-item-15644" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-15644"><a href="/dogs/dog-grooming/" data-category="global-nav" data-action="dog-grooming">Dog Grooming</a></li>
+                            <li id="menu-item-15645" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-15645"><a href="http://video.petfinder.com/videos/petfinder-video-hub/" data-category="global-nav" data-action="pet-care-videos">Pet Care Videos</a></li>
+                            <li id="menu-item-16286" class="footer menu-item menu-item-type-custom menu-item-object-custom menu-item-16286"><a href="/dogs/" data-category="global-nav" data-action="more-about-dog-care">More About Dog Care</a></li>
+                        </ul>
+                    </li>
+                    <li id="menu-item-13768" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-13768">
+                        <a href="/cats/" data-category="global-nav" data-action="cat-care">Cat Care</a>
+                        <ul class="sub-menu">
+                            <li id="menu-item-16287" class="heading menu-item menu-item-type-custom menu-item-object-custom menu-item-16287"><a href="/cats/" data-category="global-nav" data-action="cat-care-centers">Cat Care Centers</a></li>
+                            <li id="menu-item-13769" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-13769"><a href="/pet-adoption/cat-adoption/" data-category="global-nav" data-action="cat-adoption">Cat Adoption</a></li>
+                            <li id="menu-item-15664" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-15664"><a href="/cat-breeds/" data-category="global-nav" data-action="cat-breeds">Cat Breeds</a></li>
+                            <li id="menu-item-15666" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-15666"><a href="/cats/bringing-a-cat-home/" data-category="global-nav" data-action="bringing-a-cat-home">Bringing a Cat Home</a></li>
+                            <li id="menu-item-15668" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-15668"><a href="/cats/cat-behavior-and-training/" data-category="global-nav" data-action="cat-behavior-training">Cat Behavior &#038; Training</a></li>
+                            <li id="menu-item-15670" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-15670"><a href="/cats/cat-problems/" data-category="global-nav" data-action="cat-problems">Cat Problems</a></li>
+                            <li id="menu-item-15672" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-15672"><a href="/cats/cat-grooming/" data-category="global-nav" data-action="cat-grooming">Cat Grooming</a></li>
+                            <li id="menu-item-15673" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-15673"><a href="http://video.petfinder.com/videos/petfinder-video-hub/" data-category="global-nav" data-action="pet-care-videos">Pet Care Videos</a></li>
+                            <li id="menu-item-16288" class="footer menu-item menu-item-type-custom menu-item-object-custom menu-item-16288"><a href="/cats/" data-category="global-nav" data-action="more-about-cat-care">More About Cat Care</a></li>
+                        </ul>
+                    </li>
+                    <li id="menu-item-13770" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-13770">
+                        <a href="/pet-care/" data-category="global-nav" data-action="all-pet-care">All Pet Care</a>
+                        <ul class="sub-menu">
+                            <li id="menu-item-16289" class="heading menu-item menu-item-type-custom menu-item-object-custom menu-item-16289"><a href="/pet-care/" data-category="global-nav" data-action="pet-care-centers">Pet Care Centers</a></li>
+                            <li id="menu-item-15690" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-15690"><a href="http://video.petfinder.com/videos/petfinder-video-hub/" data-category="global-nav" data-action="pet-care-videos">Pet Care Videos</a></li>
+                            <li id="menu-item-15693" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-15693"><a href="/dogs/" data-category="global-nav" data-action="dogs">Dogs</a></li>
+                            <li id="menu-item-15694" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-15694"><a href="/cats/" data-category="global-nav" data-action="cats">Cats</a></li>
+                            <li id="menu-item-15695" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-15695"><a href="/pet-care/rabbit-care/" data-category="global-nav" data-action="rabbits">Rabbits</a></li>
+                            <li id="menu-item-15696" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-15696"><a href="/pet-care/horse-care/" data-category="global-nav" data-action="horses">Horses</a></li>
+                            <li id="menu-item-15697" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-15697"><a href="/pet-care/bird-care/" data-category="global-nav" data-action="birds">Birds</a></li>
+                            <li id="menu-item-15698" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-15698"><a href="/pet-care/small-and-furry-care/" data-category="global-nav" data-action="small-furry-pets">Small &#038; Furry Pets</a></li>
+                            <li id="menu-item-16290" class="footer menu-item menu-item-type-custom menu-item-object-custom menu-item-16290"><a href="/pet-care/" data-category="global-nav" data-action="more-about-pet-care">More About Pet Care</a></li>
+                        </ul>
+                    </li>
+                    <li id="menu-item-13771" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-13771">
+                        <a href="/animal-shelters-and-rescues/" data-category="global-nav" data-action="shelters-rescues">Shelters &#038; Rescues</a>
+                        <ul class="sub-menu">
+                            <li id="menu-item-16291" class="heading menu-item menu-item-type-custom menu-item-object-custom menu-item-16291"><a href="/animal-shelters-and-rescues/" data-category="global-nav" data-action="adoption-group-centers">Adoption Group Centers</a></li>
+                            <li id="menu-item-15700" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-15700"><a href="https://www.petfinder.com/awo/index.cgi?" data-category="global-nav" data-action="find-an-animal-shelter-or-rescue-group">Find an Animal Shelter or Rescue Group</a></li>
+                            <li id="menu-item-15701" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-15701"><a href="/animal-shelters-and-rescues/starting-a-pet-adoption-organization/" data-category="global-nav" data-action="starting-a-pet-adoption-organization">Starting a Pet-Adoption Organization</a></li>
+                            <li id="menu-item-15703" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-15703"><a href="/animal-shelters-and-rescues/volunteering-with-dogs/" data-category="global-nav" data-action="volunteering-with-dogs">Volunteering with Dogs</a></li>
+                            <li id="menu-item-15704" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-15704"><a href="/animal-shelters-and-rescues/volunteering-with-cats/" data-category="global-nav" data-action="volunteering-with-cats">Volunteering with Cats</a></li>
+                            <li id="menu-item-15705" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-15705"><a href="/animal-shelters-and-rescues/volunteering-with-shelters-and-rescues/" data-category="global-nav" data-action="volunteering-with-shelters-and-rescues">Volunteering with Shelters and Rescues</a></li>
+                            <li id="menu-item-15706" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-15706"><a href="/animal-shelters-and-rescues/fostering-dogs/" data-category="global-nav" data-action="fostering-dogs">Fostering Dogs</a></li>
+                            <li id="menu-item-15707" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-15707"><a href="/animal-shelters-and-rescues/fostering-cats/" data-category="global-nav" data-action="fostering-cats">Fostering Cats</a></li>
+                            <li id="menu-item-16292" class="footer menu-item menu-item-type-custom menu-item-object-custom menu-item-16292"><a href="/animal-shelters-and-rescues/" data-category="global-nav" data-action="more-about-shelters-rescues">More About Shelters &#038; Rescues</a></li>
+                        </ul>
+                    </li>
+                    <li id="menu-item-13772" class="dd-right menu-item menu-item-type-custom menu-item-object-custom current-menu-item current-menu-ancestor current-menu-parent menu-item-has-children menu-item-13772">
+                        <a href="/helping-pets/" data-category="global-nav" data-action="helping-pets">Helping Pets</a>
+                        <ul class="sub-menu">
+                            <li id="menu-item-16293" class="heading menu-item menu-item-type-custom menu-item-object-custom current-menu-item menu-item-16293"><a href="/helping-pets/" data-category="global-nav" data-action="how-to-help-pets">How to Help Pets</a></li>
+                            <li id="menu-item-15711" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item menu-item-15711"><a href="/helping-pets/" data-category="global-nav" data-action="get-involved">Get Involved</a></li>
+                            <li id="menu-item-15726" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-15726"><a href="https://www.petfinder.com/blog/" data-category="global-nav" data-action="read-our-blog">Read Our Blog</a></li>
+                            <li id="menu-item-15724" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-15724"><a href="https://www.petfinder.com/widgets-graphics/" data-category="global-nav" data-action="put-petfinder-on-your-site">Put Petfinder on Your Site</a></li>
+                            <li id="menu-item-16503" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-16503"><a href="https://www.petfinder.com/forums/" data-category="global-nav" data-action="message-boards">Message Boards</a></li>
+                            <li id="menu-item-15725" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-15725"><a target="_blank" href="http://www.petfinderfoundation.com" data-category="global-nav" data-action="petfinder-foundation">Petfinder Foundation</a></li>
+                            <li id="menu-item-16294" class="footer menu-item menu-item-type-custom menu-item-object-custom current-menu-item menu-item-16294"><a href="/helping-pets/" data-category="global-nav" data-action="more-about-helping-pets">More About Helping Pets</a></li>
+                        </ul>
+                    </li>
+                    <li id="menu-item-13773" class="dd-right menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-13773">
+                        <a href="/videos/" data-category="global-nav" data-action="videos">Videos</a>
+                        <ul class="sub-menu">
+                            <li id="menu-item-19857" class="heading menu-item menu-item-type-custom menu-item-object-custom menu-item-19857"><a href="/videos/" data-category="global-nav" data-action="videos">Videos</a></li>
+                            <li id="menu-item-19859" class="footer menu-item menu-item-type-custom menu-item-object-custom menu-item-19859"><a href="/videos/" data-category="global-nav" data-action="more-pet-videos">More Pet Videos</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+
+            <form id="frm-find-a-pet" class="frm-find-a-pet clear js-sanitize" action="https://www.petfinder.com/pet-search" method="get" autocomplete="off">
+
+                <div class="fap frm-green">
+                    <fieldset id="fap-search-options">
+                        <ul class="fap-ul">
+                            <li class="one-fifth column location-item alpha">
+                                <label for="location">Location</label>
+                                <div class="input-wrap">
+                                    <div class="styled-text-input">
+                                        <input type="text" id="location" class="loc-input-field fap-field" name="location" placeholder="Ex: Atlanta, GA or 30303" required="required" title="Location is required." />
+                                    </div>
+                                </div>
+                                <div id="requiredPopup">Please fill out this field.</div>
+                            </li>
+                            <li class="one-fifth column type-item">
+                                <label for="fap-type">Type</label>
+                                <div class="input-wrap">
+                                    <div class="styled-select">
+                                        <select id="fap-type" name="animal" class="fap-type pet-types fap-field">
+                                            <option value="" class="any">Any</option>
+                                            <option value="dog" class="pet dog">Dog</option>
+                                            <option value="cat" class="pet cat">Cat</option>
+                                            <option value="rabbit" class="pet rabbit">Rabbit</option>
+                                            <option value="smallFurry" class="pet small-furry">Small &amp; Furry</option>
+                                            <option value="horse" class="pet horse">Horse</option>
+                                            <option value="bird" class="pet birds">Bird</option>
+                                            <option value="scalesFinsOther" class="pet reptile">Scales, Fins &amp; Others</option>
+                                            <option value="pig" class="pet pig">Pig</option>
+                                            <option value="barnyard" class="pet barnyard">Barnyard</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="one-fifth column breed-item">
+                                <label for="fap-breed-id">Breed (<a href="/breeds/">See All</a>)</label>
+                                <div class="input-wrap">
+                                    <div class="styled-text-input">
+                                        <input id="fap-breed-id" class="fap-field" type="text" name="breed" placeholder="Please select Type first" autocomplete="off" />
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="one-fifth column age-item" id="fap-top-age">
+                                <span class="label-cbox">Age</span>
+                                <div class="styled-age-gender-wrap input-wrap">
+                                    <div class="styled-age-gender">
+                                        <a href="#" class="styled-age-gender-button"></a>
+                                        <div class="selected-value">Any Age</div>
+                                        <label class="cbox"><input type="checkbox" class="fap-field" name="age" value="baby" /> Baby</label><br />
+                                        <label class="cbox"><input type="checkbox" class="fap-field" name="age" value="young" /> Young</label><br />
+                                        <label class="cbox"><input type="checkbox" class="fap-field" name="age" value="adult" /> Adult</label><br />
+                                        <label class="cbox"><input type="checkbox" class="fap-field" name="age" value="senior" /> Senior</label>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="one-fifth column age-item" id="fap-top-gender">
+                                <span class="label-cbox">Gender</span>
+                                <div class="styled-age-gender-wrap input-wrap">
+                                    <div class="styled-age-gender">
+                                        <a href="#" class="styled-age-gender-button"></a>
+                                        <div class="selected-value">Any</div>
+                                        <label class="cbox"><input type="checkbox" class="fap-field" name="gender" value="male" /> Male</label><br />
+                                        <label class="cbox"><input type="checkbox" class="fap-field" name="gender" value="female" /> Female</label><br />
+                                        <label class="cbox"><input type="checkbox" class="fap-field" name="gender" value="unknown" /> Unknown</label>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="one-fifth column omega search-submit">
+                                <button type="submit" id="find-pets-btn" class="js-sanitize-submit">Find Pets</button>
+                            </li>
+                        </ul>
+                    </fieldset>
+
+            </form><!-- end search form -->
+
+
+
+
+
+
+        </header><!-- /#header -->
+
+        <script id="js-helloBar" type="text/x-handlebars-template">
+            <a href="{{helloBarLinkTargetUrl}}" class="nrd-helloBar js-helloBar-body" style="display: none">
+                <div class="nrd-helloBar-inner">
+                    {{helloBarNormalText}}
+                    <span class="u-bold">
+                        {{helloBarBoldText}}
+                        <span class="nrd-helloBar-icon nrd-helloBar-icon_chevronRight"></span>
+                    </span>
+                    <button class="nrd-helloBar-inner-close js-helloBar-close">
+                        <span class="nrd-helloBar-icon nrd-helloBar-icon_closeWhite"></span>
+                    </button>
+                </div>
+            </a>
+        </script>
+
+        <section id="main" class="main-content clear">
+
+            <div id="content" class="two-thirds column alpha content-box">
+
+                <div class="sub-category autocomplete-filter">
+
+
+                    <div id="ad-x74" class="ad ad-x74">
+                    </div>
+                    <h1>Helping Pets</h1>
+
+
+                    <section id="fcs-container" class="section royalslider rsPetfinder scrollable">
+
+
+                        <div class="slide">
+                            <a href="https://play.google.com/store/apps/details?id=com.discovery.petfinder"
+                               target="_blank" data-category="featured content" data-action="slider 1" data-label="Get Petfinder on the Go">
+                                <img class="rsImg" src="https://www.petfinder.com/wp-content/uploads/2013/02/feature-mobile-app_632x353.jpg" alt="" />
+                            </a>
+                            <div class="infoBlock rsAbsoluteEl rsNoDrag dl-overlay">
+                                <h3 class="headline">
+                                    Petfinder for Android
+                                </h3>
+                                <div class="characteristics">
+                                    <strong class="name">
+                                        <a href="https://www.petfinder.com/info/mobile" data-category="featured content" data-action="slider 1" data-label="Get Petfinder on the Go">
+                                            Get Petfinder on the Go
+                                        </a>
+                                    </strong>
+                                </div>
+                                <p>
+                                <p>Search Petfinder anywhere with our brand new mobile app for Android. Check out adoptable pets or shelters near you, watch our training videos, read our breed guides and more &#8212; all free!</p>
+                                </p>
+                                <p>
+                                    <a href="https://www.petfinder.com/info/mobile" class="greater"
+                                       data-category="featured content" data-action="slider 1" data-label="Get Petfinder on the Go">
+                                        Learn More
+                                    </a>
+                                </p>
+                                <p class="button-container">
+                                    <a href="https://play.google.com/store/apps/details?id=com.discovery.petfinder" target=_blank class="button"
+                                       data-category="featured content" data-action="slider 1" data-label="Get Petfinder on the Go">
+                                        Download Petfinder for Android
+                                    </a>
+                                </p>
+                            </div>
+                        </div>
+
+
+                        <div class="slide">
+                            <a href="https://www.petfinder.com/animal-shelters-and-rescues/fostering-cats/20-questions-before-you-foster-cats/"
+                               data-category="featured content" data-action="slider 2" data-label="20 Questions to Ask Before You Foster a Cat">
+                                <img class="rsImg" src="https://www.petfinder.com/wp-content/uploads/2012/12/cat-calico-632x353.jpg" alt="" />
+                            </a>
+                            <div class="infoBlock rsAbsoluteEl rsNoDrag dl-overlay">
+                                <h3 class="headline">
+                                    Fostering Cats
+                                </h3>
+                                <div class="characteristics">
+                                    <strong class="name">
+                                        <a href="https://www.petfinder.com/animal-shelters-and-rescues/fostering-cats/20-questions-before-you-foster-cats/" data-category="featured content" data-action="slider 2" data-label="20 Questions to Ask Before You Foster a Cat">
+                                            20 Questions to Ask Before You Foster a Cat
+                                        </a>
+                                    </strong>
+                                </div>
+                                <p>
+                                <p>For the experience to turn out well for the foster parent and the rescue organization (and, most of all, the cat), it&#8217;s crucial that all parties communicate and be clear about their expectations and responsibilities.</p>
+                                </p>
+                                <p>
+                                    <a href="https://www.petfinder.com/animal-shelters-and-rescues/fostering-cats/20-questions-before-you-foster-cats/" class="greater"
+                                       data-category="featured content" data-action="slider 2" data-label="20 Questions to Ask Before You Foster a Cat">
+                                        Read More
+                                    </a>
+                                </p>
+                            </div>
+                        </div>
+
+
+                        <div class="slide">
+                            <a href="https://www.petfinder.com/animal-shelters-and-rescues/fostering-dogs/20-questions-before-you-foster-dogs/"
+                               data-category="featured content" data-action="slider 3" data-label="20 Questions to Ask Before You Foster A Dog">
+                                <img class="rsImg" src="https://www.petfinder.com/wp-content/uploads/2012/11/dv1909032-jumping-bean-dogs-632x475-632x353.jpg" alt="" />
+                            </a>
+                            <div class="infoBlock rsAbsoluteEl rsNoDrag dl-overlay">
+                                <h3 class="headline">
+                                    Fostering Dogs
+                                </h3>
+                                <div class="characteristics">
+                                    <strong class="name">
+                                        <a href="https://www.petfinder.com/animal-shelters-and-rescues/fostering-dogs/20-questions-before-you-foster-dogs/" data-category="featured content" data-action="slider 3" data-label="20 Questions to Ask Before You Foster A Dog">
+                                            20 Questions to Ask Before You Foster A Dog
+                                        </a>
+                                    </strong>
+                                </div>
+                                <p>
+                                <p>Thinking about fostering? That&#8217;s great! Here are some questions to ask so you&#8217;re prepared.</p>
+                                </p>
+                                <p>
+                                    <a href="https://www.petfinder.com/animal-shelters-and-rescues/fostering-dogs/20-questions-before-you-foster-dogs/" class="greater"
+                                       data-category="featured content" data-action="slider 3" data-label="20 Questions to Ask Before You Foster A Dog">
+                                        Read More
+                                    </a>
+                                </p>
+                            </div>
+                        </div>
+
+
+                        <div class="slide">
+                            <a href="https://www.petfinder.com/helping-pets/puppy-mills/prisoners-profit-puppy-mills/"
+                               data-category="featured content" data-action="slider 4" data-label="Prisoners of Profit">
+                                <img class="rsImg" src="https://www.petfinder.com/wp-content/uploads/2012/12/cute-puppy-photo-132067285-632x353.jpg" alt="" />
+                            </a>
+                            <div class="infoBlock rsAbsoluteEl rsNoDrag dl-overlay">
+                                <h3 class="headline">
+                                    Puppy Mills
+                                </h3>
+                                <div class="characteristics">
+                                    <strong class="name">
+                                        <a href="https://www.petfinder.com/helping-pets/puppy-mills/prisoners-profit-puppy-mills/" data-category="featured content" data-action="slider 4" data-label="Prisoners of Profit">
+                                            Prisoners of Profit
+                                        </a>
+                                    </strong>
+                                </div>
+                                <p>
+                                    Dogs in puppy mills are literally prisoners of profit, sentenced to an existence of continual pregnancy to produce the cash crop of puppies sold in pet shops. Learn more about puppy mills here.
+                                </p>
+                                <p>
+                                    <a href="https://www.petfinder.com/helping-pets/puppy-mills/prisoners-profit-puppy-mills/" class="greater"
+                                       data-category="featured content" data-action="slider 4" data-label="Prisoners of Profit">
+                                        Read More
+                                    </a>
+                                </p>
+                            </div>
+                        </div>
+
+
+                    </section>
+
+
+
+                    <section id="topic-module-1" class="section topic-module module-with-list clear">
+
+                        <header>
+                            <h2 class="topic-title">
+                                <a href="https://www.petfinder.com/helping-pets/promoting-adoptable-pets/">Promoting Adoptable Pets</a>
+                            </h2>
+                        </header>
+
+                        <article id="topic-featured-article-1" class="mod-w-photo cat-fa">
+
+                            <figure class="featured-image">
+                                <a href="https://www.petfinder.com/helping-pets/promoting-adoptable-pets/facebook-pet-list-scroller/" class="cat-featured-image-link">
+                                    <img src="https://www.petfinder.com/wp-content/uploads/2012/11/153988082-adoptable-dog-photo-tips-632x475-112x84.jpg" class="cat-featured-article-thumb" alt="" />
+                                </a>
+                            </figure>
+
+                            <h3 class="article-title"><a href="https://www.petfinder.com/helping-pets/promoting-adoptable-pets/facebook-pet-list-scroller/">Petfinder Pet List Scroller for Facebook Pages</a></h3>
+
+                            <p>Learn how your business or organization can show off adoptable pets on your Facebook profile!</p>
+
+                        </article>
+
+                        <ul>
+                            <li><a href="https://www.petfinder.com/widgets-graphics/#pet-search-tools" target="_blank">Add a Pet-Search Tool to Your Website</a></li>
+                            <li><a href="https://www.petfinder.com/widgets-graphics/" target="_blank">Put Adoptable Pets on Your Website</a></li>
+                            <li><a href="https://www.petfinder.com/animal-shelters-and-rescues/volunteering-with-dogs/adoptable-dog-photo-tips/" target="_blank">Getting Great Adoptable-Dog Photos</a></li>
+
+                            <li><a href="https://www.petfinder.com/helping-pets/promoting-adoptable-pets/" class="greater">More About Promoting Adoptable Pets</a></li>
+                        </ul>
+
+                    </section>
+
+
+                    <section id="topic-module-2" class="section topic-module module-with-list clear">
+
+                        <header>
+                            <h2 class="topic-title">
+                                <a href="http://www.petfinderfoundation.com/about/">Petfinder Foundation</a>
+                            </h2>
+                        </header>
+
+                        <article id="topic-featured-article-2" class="mod-w-photo cat-fa">
+
+                            <figure class="featured-image">
+                                <a href="http://www.petfinderfoundation.com/" class="cat-featured-image-link">
+                                    <img src="https://www.petfinder.com/wp-content/uploads/2012/11/adopted-cat-281x211-112x84.jpg" class="cat-featured-article-thumb" alt="" />
+                                </a>
+                            </figure>
+
+                            <h3 class="article-title"><a href="http://www.petfinderfoundation.com/">The Petfinder Foundation</a></h3>
+
+                            <p>Check out how the Petfinder Foundation helps pets!</p>
+
+                        </article>
+
+                        <ul>
+                            <li><a href="https://www.petfinder.com/blog/category/petfinder-com-foundation/" target="_blank">Read Blog Posts from the Foundation</a></li>
+                            <li><a href="http://petfinderfoundation.com/grants/" target="_blank">Learn About Grant Opportunities</a></li>
+                            <li><a href="https://co.clickandpledge.com/advanced/default.aspx?wid=60712" target="_blank">Donate to the Petfinder Foundation</a></li>
+
+                            <li><a href="http://www.petfinderfoundation.com/about/" class="greater">More About Petfinder Foundation</a></li>
+                        </ul>
+
+                    </section>
+
+
+                    <section id="topic-module-3" class="section topic-module module-with-list clear">
+
+                        <header>
+                            <h2 class="topic-title">
+                                <a href="https://www.petfinder.com/awo/index.cgi?">Petfinder Shelters and Rescue Groups</a>
+                            </h2>
+                        </header>
+
+                        <article id="topic-featured-article-3" class="mod-w-photo cat-fa">
+
+                            <figure class="featured-image">
+                                <a href="https://www.petfinder.com/awo/index.cgi?" class="cat-featured-image-link">
+                                    <img src="https://www.petfinder.com/wp-content/uploads/2012/11/happy-cat-boo-boo-Davis-112x125.jpg" class="cat-featured-article-thumb" alt="" />
+                                </a>
+                            </figure>
+
+                            <h3 class="article-title"><a href="https://www.petfinder.com/awo/index.cgi?">Find a shelter or rescue organization!</a></h3>
+
+                            <p>Check out the amazing shelter and rescue organizations on Petfinder!</p>
+
+                        </article>
+
+                        <ul>
+                            <li><a href="https://www.petfinder.com/awo/index.cgi?action=state" target="_blank">View All Organizations By State</a></li>
+
+                            <li><a href="https://www.petfinder.com/awo/index.cgi?" class="greater">More About Petfinder Shelters and Rescue Groups</a></li>
+                        </ul>
+
+                    </section>
+
+
+                    <section id="topic-module-4" class="section topic-module module-with-list clear">
+
+                        <header>
+                            <h2 class="topic-title">
+                                <a href="https://www.petfinder.com/helping-pets/information-on-helping-pets/">Information On Helping Pets</a>
+                            </h2>
+                        </header>
+
+                        <article id="topic-featured-article-4" class="mod-w-photo cat-fa">
+
+                            <figure class="featured-image">
+                                <a href="https://www.petfinder.com/helping-pets/information-on-helping-pets/unusual-donations-for-shelters-rescue-groups/" class="cat-featured-image-link">
+                                    <img src="https://www.petfinder.com/wp-content/uploads/2012/11/stk213147rke-dalmatian-adoption-632x475-112x84.jpg" class="cat-featured-article-thumb" alt="" />
+                                </a>
+                            </figure>
+
+                            <h3 class="article-title"><a href="https://www.petfinder.com/helping-pets/information-on-helping-pets/unusual-donations-for-shelters-rescue-groups/">Seven Surprising Ways to Donate to Your Local Shelter</a></h3>
+
+                            <p>
+                                Don&#8217;t have cash, but want to help homeless pets? Learn seven ways you can donate.
+                            </p>
+
+                        </article>
+
+                        <ul>
+                            <li><a href="https://www.petfinder.com/helping-pets/information-on-helping-pets/pit-bull-breed-bans/">Beware of Breed Bans</a></li>
+                            <li><a href="https://www.petfinder.com/helping-pets/information-on-helping-pets/problem-shelters/">Help for Problem Shelters</a></li>
+                            <li><a href="https://www.petfinder.com/helping-pets/information-on-helping-pets/supporting-local-shelter/">Saying Thank You: Supporting Your Shelter During National Animal Shelter Appreciation Week</a></li>
+                            <li><a href="https://www.petfinder.com/helping-pets/"></a></li>
+
+                            <li><a href="https://www.petfinder.com/helping-pets/information-on-helping-pets/" class="greater">More About Information On Helping Pets</a></li>
+                        </ul>
+
+                    </section>
+
+
+                    <section id="topic-module-5" class="section topic-module module-with-list clear">
+
+                        <header>
+                            <h2 class="topic-title">
+                                <a href="https://www.petfinder.com/helping-pets/puppy-mills/">Puppy Mills</a>
+                            </h2>
+                        </header>
+
+                        <article id="topic-featured-article-5" class="mod-w-photo cat-fa">
+
+                            <figure class="featured-image">
+                                <a href="https://www.petfinder.com/helping-pets/puppy-mills/animal-cruelty-puppy-mills/" class="cat-featured-image-link">
+                                    <img src="https://www.petfinder.com/wp-content/uploads/2012/11/146768107-merial-puppy-vaccinations-632x475-112x84.jpg" class="cat-featured-article-thumb" alt="" />
+                                </a>
+                            </figure>
+
+                            <h3 class="article-title"><a href="https://www.petfinder.com/helping-pets/puppy-mills/animal-cruelty-puppy-mills/">Puppy Mills</a></h3>
+
+                            <p>
+                                A puppy mill is a breeding facility that mass-produces puppies.
+                            </p>
+
+                        </article>
+
+                        <ul>
+                            <li><a href="https://www.petfinder.com/helping-pets/puppy-mills/prisoners-profit-puppy-mills/">Prisoners of Profit (Puppy Mills)</a></li>
+                            <li><a href="https://www.petfinder.com/helping-pets/puppy-mills/puppy-mills-tragedy-continues/">Puppy Mills; The Tragedy Continues</a></li>
+                            <li><a href="https://www.petfinder.com/helping-pets/"></a></li>
+                            <li><a href="https://www.petfinder.com/helping-pets/"></a></li>
+
+                            <li><a href="https://www.petfinder.com/helping-pets/puppy-mills/" class="greater">More About Puppy Mills</a></li>
+                        </ul>
+
+                    </section>
+
+
+                    <section id="topic-module-6" class="section topic-module module-with-list clear">
+
+                        <header>
+                            <h2 class="topic-title">
+                                <a href="https://www.petfinder.com/helping-pets/feral-cats/">Feral Cats</a>
+                            </h2>
+                        </header>
+
+                        <article id="topic-featured-article-6" class="mod-w-photo cat-fa">
+
+                            <figure class="featured-image">
+                                <a href="https://www.petfinder.com/helping-pets/feral-cats/feral-cat-care-tnr/" class="cat-featured-image-link">
+                                    <img src="https://www.petfinder.com/wp-content/uploads/2012/11/Cat_DL-112x63.jpg" class="cat-featured-article-thumb" alt="" />
+                                </a>
+                            </figure>
+
+                            <h3 class="article-title"><a href="https://www.petfinder.com/helping-pets/feral-cats/feral-cat-care-tnr/">Feral Cat Care and TNR: A Beginner's Guide</a></h3>
+
+                            <p>Feral cats have different needs than the cuddly cats and kittens hoping to find homes here on...</p>
+
+                        </article>
+
+                        <ul>
+                            <li><a href="https://www.petfinder.com/helping-pets/feral-cats/">Feral Cats</a></li>
+                            <li><a href="https://www.petfinder.com/helping-pets/feral-cats/building-feral-cat-shelters/">How to Build Feral-Cat Shelters</a></li>
+                            <li><a href="https://www.petfinder.com/helping-pets/feral-cats/caring-for-feral-cats/">How to Trap-Neuter-Return (TNR) Feral Cats</a></li>
+                            <li><a href="https://www.petfinder.com/helping-pets/feral-cats/winter-care-feral-cats/">Winter Care and Safety for Community Cats</a></li>
+
+                            <li><a href="https://www.petfinder.com/helping-pets/feral-cats/" class="greater">More About Feral Cats</a></li>
+                        </ul>
+
+                    </section>
+
+
+                    <section id="topic-module-7" class="section topic-module module-with-list clear">
+
+                        <header>
+                            <h2 class="topic-title">
+                                <a href="https://www.petfinder.com/helping-pets/animals-and-disaster-relief/">Animals And Disaster Relief</a>
+                            </h2>
+                        </header>
+
+                        <article id="topic-featured-article-7" class="mod-w-photo cat-fa">
+
+                            <figure class="featured-image">
+                                <a href="https://www.petfinder.com/helping-pets/animals-and-disaster-relief/helping-pets-after-disasters/" class="cat-featured-image-link">
+                                    <img src="https://www.petfinder.com/wp-content/uploads/2012/11/124651503-disaster-preparedness-cats-632x475-112x84.jpg" class="cat-featured-article-thumb" alt="" />
+                                </a>
+                            </figure>
+
+                            <h3 class="article-title"><a href="https://www.petfinder.com/helping-pets/animals-and-disaster-relief/helping-pets-after-disasters/">Helping Pets in Danger After Disasters</a></h3>
+
+                            <p>Whenever disaster strikes, shelters and rescue groups work to help pets. You can help, too.</p>
+
+                        </article>
+
+                        <ul>
+                            <li><a href="https://www.petfinder.com/helping-pets/animals-and-disaster-relief/disaster-search-rescue-dogs/">Disaster Search and Rescue Dogs</a></li>
+                            <li><a href="https://www.petfinder.com/helping-pets/animals-and-disaster-relief/disaster-animal-response-team-volunteer/">Train to Be a Disaster Animal Response Team Volunteer</a></li>
+                            <li><a href="https://www.petfinder.com/helping-pets/"></a></li>
+                            <li><a href="https://www.petfinder.com/helping-pets/"></a></li>
+
+                            <li><a href="https://www.petfinder.com/helping-pets/animals-and-disaster-relief/" class="greater">More About Animals And Disaster Relief</a></li>
+                        </ul>
+
+                    </section>
+
+
+                    <section id="topic-module-8" class="section topic-module module-with-list clear">
+
+                        <header>
+                            <h2 class="topic-title">
+                                <a href="https://www.petfinder.com/helping-pets/animal-cruelty/">Animal Cruelty</a>
+                            </h2>
+                        </header>
+
+                        <article id="topic-featured-article-8" class="mod-w-photo cat-fa">
+
+                            <figure class="featured-image">
+                                <a href="https://www.petfinder.com/helping-pets/animal-cruelty/animal-cruelty-human-violence/" class="cat-featured-image-link">
+                                    <img src="https://www.petfinder.com/wp-content/uploads/2012/11/145154698-getting-dog-to-like-baths-632x475-112x84.jpg" class="cat-featured-article-thumb" alt="" />
+                                </a>
+                            </figure>
+
+                            <h3 class="article-title"><a href="https://www.petfinder.com/helping-pets/animal-cruelty/animal-cruelty-human-violence/">Animal Cruelty and Human Violence - The Connection</a></h3>
+
+                            <p>Animal cruelty and human violence seem to have a direct connection. Learn more.</p>
+
+                        </article>
+
+                        <ul>
+                            <li><a href="https://www.petfinder.com/helping-pets/animal-cruelty/animal-cruelty-faqs/">Animal Cruelty - Frequently Asked Questions</a></li>
+                            <li><a href="https://www.petfinder.com/helping-pets/animal-cruelty/animal-cruelty-animal-fighting/">ACT Newsletter - Animal Bloodsports</a></li>
+                            <li><a href="https://www.petfinder.com/helping-pets/animal-cruelty/americas-animal-abuse-problem/">America's Animal Abuse Problem</a></li>
+                            <li><a href="https://www.petfinder.com/helping-pets/"></a></li>
+
+                            <li><a href="https://www.petfinder.com/helping-pets/animal-cruelty/" class="greater">More About Animal Cruelty</a></li>
+                        </ul>
+
+                    </section>
+
+
+                    <section id="topic-module-9" class="section topic-module module-with-list clear">
+
+                        <header>
+                            <h2 class="topic-title">
+                                <a href="https://www.petfinder.com/helping-pets/careers-with-pets/">Careers With Pets</a>
+                            </h2>
+                        </header>
+
+                        <article id="topic-featured-article-9" class="mod-w-photo cat-fa">
+
+                            <figure class="featured-image">
+                                <a href="https://www.petfinder.com/helping-pets/careers-with-pets/careers-animal/" class="cat-featured-image-link">
+                                    <img src="https://www.petfinder.com/wp-content/uploads/2012/11/78030219-exercise-overweight-dog-251x189-112x84.jpg" class="cat-featured-article-thumb" alt="" />
+                                </a>
+                            </figure>
+
+                            <h3 class="article-title"><a href="https://www.petfinder.com/helping-pets/careers-with-pets/careers-animal/">Careers in Animal Behavior</a></h3>
+
+                            <p>Trainers, canine trainers, applied animal behaviorists and veterinary behaviorists are all careers...</p>
+
+                        </article>
+
+                        <ul>
+                            <li><a href="https://www.petfinder.com/helping-pets/careers-with-pets/dog-behavior-careers/">Careers in Dog Behavior</a></li>
+                            <li><a href="https://www.petfinder.com/helping-pets/careers-with-pets/careers-animals-job/">Careers with Animals - Job Descriptions</a></li>
+                            <li><a href="https://www.petfinder.com/helping-pets/careers-with-pets/resources-animal-related/">Resources in Animal Related Careers</a></li>
+                            <li><a href="https://www.petfinder.com/helping-pets/careers-with-pets/">Careers With Pets</a></li>
+
+                            <li><a href="https://www.petfinder.com/helping-pets/careers-with-pets/" class="greater">More About Careers With Pets</a></li>
+                        </ul>
+
+                    </section>
+
+
+                    <section id="topic-module-10" class="section topic-module module-with-list clear">
+
+                        <header>
+                            <h2 class="topic-title">
+                                <a href="https://www.petfinder.com/animal-shelters-and-rescues/fostering-cats/">Fostering Cats</a>
+                            </h2>
+                        </header>
+
+                        <article id="topic-featured-article-10" class="mod-w-photo cat-fa">
+
+                            <figure class="featured-image">
+                                <a href="https://www.petfinder.com/animal-shelters-and-rescues/fostering-cats/what-is-cat-fostering/" class="cat-featured-image-link">
+                                    <img src="https://www.petfinder.com/wp-content/uploads/2012/11/147698488-cat-allergies-632x475-112x84.jpg" class="cat-featured-article-thumb" alt="" />
+                                </a>
+                            </figure>
+
+                            <h3 class="article-title"><a href="https://www.petfinder.com/animal-shelters-and-rescues/fostering-cats/what-is-cat-fostering/">What Is Fostering a Cat?</a></h3>
+
+                            <p>When you foster, you agree to take a homeless cat into your home and give him or her love, care and...</p>
+
+                        </article>
+
+                        <ul>
+                            <li><a href="https://www.petfinder.com/animal-shelters-and-rescues/fostering-cats/">Fostering Cats</a></li>
+                            <li><a href="https://www.petfinder.com/animal-shelters-and-rescues/fostering-cats/fostering-cats-kittens/">How to Be the Best Cat Foster Parent</a></li>
+                            <li><a href="https://www.petfinder.com/animal-shelters-and-rescues/fostering-cats/tips-for-giving-up-foster-cats/">Tips for Letting Go When Your Foster Cat Is Adopted</a></li>
+                            <li><a href="https://www.petfinder.com/animal-shelters-and-rescues/fostering-cats/eight-reasons-you-can-foster-a-pet/">Eight Reasons You Can Foster a Pet -- Even If You Think You Can't</a></li>
+
+                            <li><a href="https://www.petfinder.com/animal-shelters-and-rescues/fostering-cats/" class="greater">More About Fostering Cats</a></li>
+                        </ul>
+
+                    </section>
+
+
+                    <section id="topic-module-11" class="section topic-module module-with-list clear">
+
+                        <header>
+                            <h2 class="topic-title">
+                                <a href="https://www.petfinder.com/animal-shelters-and-rescues/fostering-dogs/">Fostering Dogs</a>
+                            </h2>
+                        </header>
+
+                        <article id="topic-featured-article-11" class="mod-w-photo cat-fa">
+
+                            <figure class="featured-image">
+                                <a href="https://www.petfinder.com/animal-shelters-and-rescues/fostering-dogs/before-you-foster/" class="cat-featured-image-link">
+                                    <img src="https://www.petfinder.com/wp-content/uploads/2012/11/154321335-1186-clean-ears-clean-dogs-ears-632x475-112x84.jpg" class="cat-featured-article-thumb" alt="" />
+                                </a>
+                            </figure>
+
+                            <h3 class="article-title"><a href="https://www.petfinder.com/animal-shelters-and-rescues/fostering-dogs/before-you-foster/">Before You Foster</a></h3>
+
+                            <p>Fostering a pet is a great way to help. Ask these questions before you begin.</p>
+
+                        </article>
+
+                        <ul>
+                            <li><a href="https://www.petfinder.com/helping-pets/"></a></li>
+                            <li><a href="https://www.petfinder.com/animal-shelters-and-rescues/fostering-dogs/fostering-a-pet-faq/">Fostering a Pet: Frequently Asked Questions</a></li>
+                            <li><a href="https://www.petfinder.com/helping-pets/"></a></li>
+                            <li><a href="https://www.petfinder.com/animal-shelters-and-rescues/fostering-dogs/introducing-foster-pets/">How Do I Introduce my Foster Pet to My Current Pets?</a></li>
+
+                            <li><a href="https://www.petfinder.com/animal-shelters-and-rescues/fostering-dogs/" class="greater">More About Fostering Dogs</a></li>
+                        </ul>
+
+                    </section>
+
+
+                    <section id="topic-module-12" class="section topic-module module-with-list clear">
+
+                        <header>
+                            <h2 class="topic-title">
+                                <a href="https://www.petfinder.com/animal-shelters-and-rescues/volunteering-with-dogs/">Volunteering With Dogs</a>
+                            </h2>
+                        </header>
+
+                        <article id="topic-featured-article-12" class="mod-w-photo cat-fa">
+
+                            <figure class="featured-image">
+                                <a href="https://www.petfinder.com/animal-shelters-and-rescues/volunteering-with-dogs/photography-saves-adoptable-pets/" class="cat-featured-image-link">
+                                    <img src="https://www.petfinder.com/wp-content/uploads/2012/11/76806222-what-is-dog-fostering-251x189-112x84.jpg" class="cat-featured-article-thumb" alt="" />
+                                </a>
+                            </figure>
+
+                            <h3 class="article-title"><a href="https://www.petfinder.com/animal-shelters-and-rescues/volunteering-with-dogs/photography-saves-adoptable-pets/">How Photography Can Save Pets' Lives</a></h3>
+
+                            <p>The easiest way to show off a pet's personality is with a great photo. That's why one of the best...</p>
+
+                        </article>
+
+                        <ul>
+                            <li><a href="https://www.petfinder.com/animal-shelters-and-rescues/volunteering-with-dogs/service-dog-vs-therapy-dogs/">Service Dogs vs. Therapy Dogs: What's the Difference?</a></li>
+                            <li><a href="https://www.petfinder.com/animal-shelters-and-rescues/volunteering-with-dogs/animal-assisted-therapy-dogs/">Animal-Assisted Therapy</a></li>
+                            <li><a href="https://www.petfinder.com/helping-pets/"></a></li>
+                            <li><a href="https://www.petfinder.com/helping-pets/"></a></li>
+
+                            <li><a href="https://www.petfinder.com/animal-shelters-and-rescues/volunteering-with-dogs/" class="greater">More About Volunteering With Dogs</a></li>
+                        </ul>
+
+                    </section>
+
+
+                    <section id="topic-module-13" class="section topic-module module-with-list clear">
+
+                        <header>
+                            <h2 class="topic-title">
+                                <a href="https://www.petfinder.com/animal-shelters-and-rescues/volunteering-with-shelters-and-rescues/">Volunteering With Shelters & Rescues</a>
+                            </h2>
+                        </header>
+
+                        <article id="topic-featured-article-13" class="mod-w-photo cat-fa">
+
+                            <figure class="featured-image">
+                                <a href="https://www.petfinder.com/animal-shelters-and-rescues/volunteering-with-shelters-and-rescues/volunteering-local-shelter/" class="cat-featured-image-link">
+                                    <img src="https://www.petfinder.com/wp-content/uploads/2012/11/78030219-exercise-overweight-dog-251x189-112x84.jpg" class="cat-featured-article-thumb" alt="" />
+                                </a>
+                            </figure>
+
+                            <h3 class="article-title"><a href="https://www.petfinder.com/animal-shelters-and-rescues/volunteering-with-shelters-and-rescues/volunteering-local-shelter/">Your Local Shelter Wants You!</a></h3>
+
+                            <p>
+                                You don&#8217;t have to be an animal expert to help out at your community&#8217;s shelter.
+                            </p>
+
+                        </article>
+
+                        <ul>
+                            <li><a href="https://www.petfinder.com/helping-pets/information-on-helping-pets/unusual-donations-for-shelters-rescue-groups/">Seven Surprising Ways to Donate to Your Local Shelter</a></li>
+                            <li><a href="https://www.petfinder.com/animal-shelters-and-rescues/volunteering-with-shelters-and-rescues/volunteer-vacations/">Volunteer Vacations</a></li>
+                            <li><a href="https://www.petfinder.com/helping-pets/"></a></li>
+                            <li><a href="https://www.petfinder.com/helping-pets/"></a></li>
+
+                            <li><a href="https://www.petfinder.com/animal-shelters-and-rescues/volunteering-with-shelters-and-rescues/" class="greater">More About Volunteering With Shelters & Rescues</a></li>
+                        </ul>
+
+                    </section>
+
+
+                    <section id="topic-module-14" class="section topic-module module-with-list clear">
+
+                        <header>
+                            <h2 class="topic-title">
+                                <a href="https://www.petfinder.com/animal-shelters-and-rescues/starting-a-pet-adoption-organization/">Starting A Pet-Adoption Organization</a>
+                            </h2>
+                        </header>
+
+                        <article id="topic-featured-article-14" class="mod-w-photo cat-fa">
+
+                            <figure class="featured-image">
+                                <a href="https://www.petfinder.com/animal-shelters-and-rescues/starting-a-pet-adoption-organization/start-animal-shelter/" class="cat-featured-image-link">
+                                    <img src="https://www.petfinder.com/wp-content/uploads/2012/11/86522032-737-husbandry-for-hounds-251x189-112x84.jpg" class="cat-featured-article-thumb" alt="" />
+                                </a>
+                            </figure>
+
+                            <h3 class="article-title"><a href="https://www.petfinder.com/animal-shelters-and-rescues/starting-a-pet-adoption-organization/start-animal-shelter/">Want to Start an Animal Shelter?</a></h3>
+
+                            <p> Check out these essential tips for starting and improving a humane organization.</p>
+
+                        </article>
+
+                        <ul>
+                            <li><a href="https://www.petfinder.com/animal-shelters-and-rescues/starting-a-pet-adoption-organization/starting-humane-organization/">Keys to a Great Shelter (PDF)</a></li>
+                            <li><a href="https://www.petfinder.com/animal-shelters-and-rescues/starting-a-pet-adoption-organization/starting-nonprofit-animal-rescue/">5 Steps to Starting a Nonprofit</a></li>
+                            <li><a href="https://www.petfinder.com/animal-shelters-and-rescues/starting-a-pet-adoption-organization/starting-humane-education/">Things to Think About Before Starting a Humane Education Program</a></li>
+                            <li><a href="https://www.petfinder.com/animal-shelters-and-rescues/starting-a-pet-adoption-organization/">Starting A Pet-Adoption Organization</a></li>
+
+                            <li><a href="https://www.petfinder.com/animal-shelters-and-rescues/starting-a-pet-adoption-organization/" class="greater">More About Starting A Pet-Adoption Organization</a></li>
+                        </ul>
+
+                    </section>
+
+
+                    <section id="topic-module-15" class="section topic-module module-with-list clear">
+
+                        <header>
+                            <h2 class="topic-title">
+                                <a href="https://www.petfinder.com/animal-shelters-and-rescues/volunteering-with-cats/">Volunteering With Cats</a>
+                            </h2>
+                        </header>
+
+                        <article id="topic-featured-article-15" class="mod-w-photo cat-fa">
+
+                            <figure class="featured-image">
+                                <a href="https://www.petfinder.com/animal-shelters-and-rescues/volunteering-with-cats/" class="cat-featured-image-link">
+                                    <img src="https://www.petfinder.com/wp-content/uploads/2012/11/how-to-adopt-a-cat-video-281x211-112x84.jpg" class="cat-featured-article-thumb" alt="" />
+                                </a>
+                            </figure>
+
+                            <h3 class="article-title"><a href="https://www.petfinder.com/animal-shelters-and-rescues/volunteering-with-cats/">Volunteering With Cats</a></h3>
+
+                            <p>
+                                Help adoptable cats put their best paw forward!
+
+                                ·
+
+
+                            </p>
+
+                        </article>
+
+                        <ul>
+                            <li><a href="https://www.petfinder.com/animal-shelters-and-rescues/volunteering-with-cats/adoptable-cat-photo-tips/">Gallery: 7 Tips for Taking Great Adoptable-Cat Photos</a></li>
+                            <li><a href="https://www.petfinder.com/helping-pets/"></a></li>
+                            <li><a href="https://www.petfinder.com/helping-pets/"></a></li>
+                            <li><a href="https://www.petfinder.com/helping-pets/"></a></li>
+
+                            <li><a href="https://www.petfinder.com/animal-shelters-and-rescues/volunteering-with-cats/" class="greater">More About Volunteering With Cats</a></li>
+                        </ul>
+
+                    </section>
+
+
+                </div>
+
+            </div>
+        </section><!-- #main -->
+
+
+        <footer id="site-footer" class="content-box main-footer">
+
+
+            <small class="copyright">All trademarks are owned by Soci&eacute;t&eacute; des Produits Nestl&eacute; S.A., or used with permission.</small>
+
+        </footer>
+
+    </div><!-- /container -->
+
+    <script type='text/javascript'>
+/* <![CDATA[ */
+var JAVASCRIPT_ENVIRONMENT = {"production":"1"};
+/* ]]> */
+    </script>
+    <script type='text/javascript' src='https://www.petfinder.com/wp-content/themes/petfinder2013/js/build/main.min.js?ver=1.3'></script>
+
+    <!-- handlebar templates -->
+    <script id="js-recentlyViewedPets-template" type="text/x-handlebars-template">
+        <div id="recentpets-container" class="clear">
+            <div id="recentpets" class="content_box">
+                <h2>Recently Viewed Pets</h2>
+                <ul id="rvp-list" class="polaroids">
+                    {{#each pets}}
+                    <li>
+                        <a href="/petdetail/{{id}}" class="polaroid-image"><img src="{{recentlyViewedPhotoURL}}" alt="{{name}}" data-category="pet details" data-action="click recently viewed pets" /></a>
+                        <a href="/petdetail/{{id}}" data-category="pet details" data-action="click recently viewed pets">{{name}}</a>
+                    </li>
+                    {{/each}}
+                </ul>
+            </div>
+        </div>
+    </script>
+
+    <script id="js-eventsNearYouModule-template" type="text/x-handlebars-template">
+        <header><h3>Events near you</h3></header>
+        {{#each events}}
+        <div class="item event" itemtype="http://schema.org/Event">
+            <time itemprop="startDate" content="{{start_date_time}}" class="event-date">
+                <span>{{start_date_day_shortname}}</span>
+                {{start_date_month}}{{start_date_day}}
+            </time>
+            <div class="content" itemscope="" itemtype="http://schema.org/Place">
+                <h4 class="js-eventTitle" itemprop="name">
+                    <a href="/calendar/displayevent.cgi?event_id={{event_id}}">
+                        {{title}}
+                    </a>
+                </h4>
+                <time itemprop="endDate" content="{{start_date_time}}">
+                    {{event_start_time}} - {{event_end_time}}
+                </time>
+                <dl>
+                    <dt>Location:</dt>
+                    <dd>
+                        <div itemprop="name">{{location}}</div>
+                        <p itemprop="address" itemscope="" itemtype="http://schema.org/PostalAddress">
+                            <div itemprop="streetAddress">{{street_address}}</div>
+                            <span itemprop="addressLocality">{{locality}}</span>,
+                            <span itemprop="addressRegion">{{region}}</span>
+                            <span itemprop="postalCode">{{postal_code}}</span>
+                        </p>
+                        <p>
+                            <a href="/calendar/displayevent.cgi?event_id={{event_id}}" class="greater">
+                                Learn More
+                            </a>
+                        </p>
+                    </dd>
+                </dl>
+            </div>
+        </div>
+
+        {{/each}}
+    </script>
+
+    <script id="js-eventsNearYouModule-noResultsTemplate" type="text/x-handlebars-template">
+        <header><h3>Events near you</h3></header>
+        <p>No events found near you. <a href="/calendar/">Click here to change search parameters.</a></p>
+    </script>
+
+    <script id="js-petsearch-searchTitle-template" type="text/x-handlebars-template">
+
+        {{#if shelterName}}
+        {{status}}
+        {{pluralize_animal_types results 'Pet' }}
+        {{preposition}}
+        {{shelterName}}
+        {{else}}
+        {{status}}
+
+        {{#ifCond breed '||' type}}
+        {{#ifCond breed '&&' type}}
+        {{breed}}
+        {{pluralize_animal_types results type }}
+        {{else}}
+        {{#if breed}}
+        {{pluralize_breed results breed}}
+        {{else}}
+        {{pluralize_animal_types results type }}
+        {{/if}}
+        {{/ifCond}}
+        {{else}}
+        {{pluralize_animal_types results 'Pet' }}
+        {{/ifCond}}
+
+        {{preposition}}
+        {{distance}}
+        {{distanceUnits}}
+        {{distancePreposition}}
+        {{location}}
+        {{/if}}
+
+    </script>
+
+    <!-- handlebar templates end -->
+
+
+    <script type="text/javascript" src="//www.google.com/recaptcha/api/js/recaptcha_ajax.js"></script>
+
+    <script>
+        (function($) {
+
+            /*fancy box support via jQuery plugin*/
+            $(".fancybox").fancybox();
+            if($('.js-emailShare').length) {
+                $('.js-emailShare').on('click', 'a', function(e) {
+                    e.preventDefault();
+                    var $clickTarget = $(e.currentTarget);
+
+                    new PF['views/modals/EmailShareArticleModalView']()
+                            .init()
+                            .setTarget($clickTarget)
+                            .present();
+                });
+            }
+
+            if($('.js-print-link').length > 0) {
+                $(".js-print-link").on('click', function(e) {
+                    e.preventDefault();
+
+                    if ($('.slideshow').length > 0) {
+                        var printWindow = window.open('?print=true', '_blank', '', true);
+                        if (printWindow.addEventListener) {
+                            printWindow.addEventListener('load', function () {
+                                printWindow.print()
+                            }, false);
+                        } else {
+                            printWindow.attachEvent('onload', function () {
+                                printWindow.print()
+                            })
+                        }
+                    } else {
+                        window.print();
+                    }
+                });
+            }
+
+            /*form validation fallback via jQuery plugin
+            plugin will disable HTML5 form validation
+            custom validation for safari and browseres which dont support input.required*/
+            var isSafari = Object.prototype.toString.call(window.HTMLElement).indexOf('Constructor') > 0;
+            if (!Modernizr.input.required || isSafari) {
+                $('form').validator(PF.VALIDATE_OPTIONS);
+            }
+
+            /*set the base url for pet photos*/
+            PF['services/ServiceConfiguration'].photoHost = 'drpem3xzef3kf.cloudfront.net';
+
+            /*create PetSearchFormView for all pages except search results
+            PetSearchFormView is created and managed by PetSearchView for this page*/
+            if(PF['Configuration/isPetSearchPage'] !== true) {
+                var searchFormView = new PF['views/PetSearchFormView']();
+                var petSearchRequestModel = new PF['models/PetSearchRequestModel']().updateFromCookies();
+                searchFormView
+                    .init()
+                    .setPetSearchRequestModel(petSearchRequestModel)
+                    .updateFromPetSearchRequestModel();
+            }
+
+            new PF['views/RecentlyViewedPetsView']()
+                .init();
+
+        /*create slider view if needed*/
+            if ($('#fcs-container .slide').size() > 0){
+                new PF['views/SliderView']()
+                    .setEl($('#fcs-container'))
+                    .update();
+            }
+
+        /*setup header view, it is a singleton*/
+            PF['views/HeaderView']
+                .init()
+                .update();
+
+        /*seutp up sidebar view*/
+            new PF['views/SidebarView']()
+                .setEl($('#sidebar'))
+                .init();
+//            new PF['controllers/FormSubmitController']()
+//                .init();
+
+            new PF['views/SearchPageView']().init();
+
+            new PF['views/ConditionalAuthenticationView']()
+                .setEl($('body'))
+                .init();
+
+            new PF['views/HelloBarView']()
+                .setEl($('body'))
+                .init();
+
+            if($('#js-video').size() > 0) {
+                new PF['views/VideoView']()
+                    .setEl($('#js-video'))
+                    .init()
+                    .update();
+
+            }
+
+        }(jQuery));
+    </script>
+</body>
+</html>
