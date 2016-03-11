@@ -40,5 +40,12 @@ namespace asp.net_MVC.Controllers
 
             return View();
         }
+
+        public ActionResult Report()
+        {
+            ViewBag.Message = "Report a missing pet page.";
+
+            return View();
+        }
     }
 }
