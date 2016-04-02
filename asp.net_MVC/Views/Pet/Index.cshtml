@@ -8,7 +8,6 @@
 
 <p>
     @Html.ActionLink("Create New", "Create")
-
 </p>
 <table class="table">
     <tr>
@@ -22,7 +21,7 @@
             @Html.DisplayNameFor(model => model.missingDate)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.discription)
+            @Html.DisplayNameFor(model => model.description)
         </th>
         <th></th>
     </tr>
@@ -39,7 +38,7 @@
             @Html.DisplayFor(modelItem => item.missingDate)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.discription)
+            @Html.DisplayFor(modelItem => item.description)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.petId }) |
