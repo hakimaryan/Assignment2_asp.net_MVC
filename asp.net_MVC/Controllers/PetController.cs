@@ -46,7 +46,7 @@ namespace asp.net_MVC.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "petId,petNmae,petTypes,missingDate,description")] Pet pet)
+        public ActionResult Create([Bind(Include = "petId,petName,petTypes,missingDate,Description,Reward")] Pet pet)
         {
             if (ModelState.IsValid)
             {
@@ -78,7 +78,7 @@ namespace asp.net_MVC.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "petId,petNmae,petTypes,missingDate,description")] Pet pet)
+        public ActionResult Edit([Bind(Include = "petId,petName,petTypes,missingDate,Description,Reward")] Pet pet)
         {
             if (ModelState.IsValid)
             {

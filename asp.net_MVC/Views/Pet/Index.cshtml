@@ -12,7 +12,7 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.petNmae)
+            @Html.DisplayNameFor(model => model.petName)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.petTypes)
@@ -21,7 +21,10 @@
             @Html.DisplayNameFor(model => model.missingDate)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.description)
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Reward)
         </th>
         <th></th>
     </tr>
@@ -29,7 +32,7 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.petNmae)
+            @Html.DisplayFor(modelItem => item.petName)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.petTypes)
@@ -38,7 +41,10 @@
             @Html.DisplayFor(modelItem => item.missingDate)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.description)
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Reward)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.petId }) |
