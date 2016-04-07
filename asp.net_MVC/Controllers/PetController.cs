@@ -1,12 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
-using System.Web;
 using System.Web.Mvc;
 using asp.net_MVC.Models;
+using PagedList;
 
 namespace asp.net_MVC.Controllers
 {
@@ -15,10 +14,52 @@ namespace asp.net_MVC.Controllers
         private PetDBContext db = new PetDBContext();
 
         // GET: Pet
-        public ActionResult Index()
+        public ActionResult Index(string sortOrder, string currentFilter, string searchString, int? page)
         {
-            return View(db.Pets.ToList());
-        }
+
+            ViewBag.CurrentSort = sortOrder;
+            ViewBag.NameSortParm = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
+            ViewBag.DateSortParm = sortOrder == "Date" ? "date_desc" : "Date";
+
+            if (searchString != null)
+            {
+                page = 1;
+            }
+            else
+            {
+                searchString = currentFilter;
+            }
+
+            ViewBag.CurrentFilter = searchString;
+
+            var pets = from s in db.Pets
+                           select s;
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                pets = pets.Where(s => s.petName.Contains(searchString));
+            }
+            switch (sortOrder)
+            {
+                case "name_desc":
+                    pets = pets.OrderByDescending(s => s.petName);
+                    break;
+                case "Date":
+                    pets = pets.OrderBy(s => s.missingDate);
+                    break;
+                case "date_desc":
+                    pets = pets.OrderByDescending(s => s.missingDate);
+                    break;
+                default:  // Name ascending 
+                    pets = pets.OrderBy(s => s.petName);
+                    break;
+            }
+
+            int pageSize = 7;
+            int pageNumber = (page ?? 1);
+            return View(pets.ToPagedList(pageNumber, pageSize));
+           // return View(db.Pets.ToList());
+    }
+
 
         // GET: Pet/Details/5
         public ActionResult Details(int? id)
@@ -57,6 +98,7 @@ namespace asp.net_MVC.Controllers
 
             return View(pet);
         }
+
 
         // GET: Pet/Edit/5
         public ActionResult Edit(int? id)

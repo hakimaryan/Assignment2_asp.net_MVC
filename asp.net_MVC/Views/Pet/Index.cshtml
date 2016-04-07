@@ -1,4 +1,5 @@
-﻿@model IEnumerable<asp.net_MVC.Models.Pet>
+﻿@model PagedList.IPagedList<asp.net_MVC.Models.Pet>
+@using PagedList.Mvc;
 
 @{
     ViewBag.Title = "Index";
@@ -12,19 +13,20 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.petName)
+            @Html.ActionLink("Pet Name", "Index", new { sortOrder = ViewBag.NameSortParm, currentFilter = ViewBag.CurrentFilter })
+          
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.petTypes)
+            Pet Type
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.missingDate)
+            @Html.ActionLink("Missing Date", "Index", new { sortOrder = ViewBag.DateSortParm, currentFilter = ViewBag.CurrentFilter })
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Description)
+            Description
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Reward)
+            Reward
         </th>
         <th></th>
     </tr>
@@ -55,3 +57,7 @@
 }
 
 </table>
+<br />
+Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+@Html.PagedListPager(Model, page => Url.Action("Index",
+    new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))
