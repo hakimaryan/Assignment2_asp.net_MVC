@@ -1,23 +1,19 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
 using System.Linq;
-using System.Threading.Tasks;
 using System.Net;
-using System.Web;
 using System.Web.Mvc;
 using asp.net_MVC.Models;
-using System.Net;
 using PagedList;
 
 namespace asp.net_MVC.Controllers
 {
     public class PetsController : Controller
     {
-        private ApplicationDbContext db = new ApplicationDbContext();
+        private PetDBContext db = new PetDBContext();
 
-        // GET: Pets
+        // GET: Pet
         public ActionResult Index(string sortOrder, string currentFilter, string searchString, int? page)
         {
 
@@ -65,7 +61,7 @@ namespace asp.net_MVC.Controllers
         }
 
 
-        // GET: Pet/Details/5
+        // GET: Pets/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -80,18 +76,18 @@ namespace asp.net_MVC.Controllers
             return View(pet);
         }
 
-        // GET: Pet/Create
+        // GET: Pets/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Pet/Create
+        // POST: Pets/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "petId,petName,petTypes,missingDate,Description,Reward")] Pet pet)
+        public ActionResult Create([Bind(Include = "petId,petName,petTypes,missingDate,Description,Postcode,Reward")] Pet pet)
         {
             if (ModelState.IsValid)
             {
@@ -103,8 +99,7 @@ namespace asp.net_MVC.Controllers
             return View(pet);
         }
 
-
-        // GET: Pet/Edit/5
+        // GET: Pets/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -119,12 +114,12 @@ namespace asp.net_MVC.Controllers
             return View(pet);
         }
 
-        // POST: Pet/Edit/5
+        // POST: Pets/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "petId,petName,petTypes,missingDate,Description,Reward")] Pet pet)
+        public ActionResult Edit([Bind(Include = "petId,petName,petTypes,missingDate,Description,Postcode,Reward")] Pet pet)
         {
             if (ModelState.IsValid)
             {
@@ -135,7 +130,7 @@ namespace asp.net_MVC.Controllers
             return View(pet);
         }
 
-        // GET: Pet/Delete/5
+        // GET: Pets/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -150,7 +145,7 @@ namespace asp.net_MVC.Controllers
             return View(pet);
         }
 
-        // POST: Pet/Delete/5
+        // POST: Pets/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)

@@ -29,17 +29,15 @@ namespace asp.net_MVC.Models
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         [Display(Name = "Missing Date")]
         public DateTime missingDate { get; set; }
-        public string Description { get; set; }
-
         [DataType(DataType.Currency)]
+        public string Description { get; set; }
+        public string Postcode { get; set; }
         public decimal Reward { get; set; }
     }
 
     public class PetDBContext : DbContext
     {
         public DbSet<Pet> Pets { get; set; }
-
-        public System.Data.Entity.DbSet<asp.net_MVC.Models.Pet> PetOwners { get; set; }
     }
 
 }

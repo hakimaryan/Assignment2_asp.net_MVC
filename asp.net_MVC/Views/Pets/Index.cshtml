@@ -11,7 +11,7 @@
     @Html.ActionLink("Create New", "Create")
 </p>
 
-@using (Html.BeginForm("Index", "Pet", FormMethod.Get))
+@using (Html.BeginForm("Index", "Pets", FormMethod.Get))
 {
     <p>
         Find by name: @Html.TextBox("SearchString", ViewBag.CurrentFilter as string)
@@ -23,13 +23,17 @@
     <tr>
         <th>
             @Html.ActionLink("Pet Name", "Index", new { sortOrder = ViewBag.NameSortParm, currentFilter = ViewBag.CurrentFilter })
-
+          
         </th>
         <th>
             Pet Type
         </th>
         <th>
             @Html.ActionLink("Missing Date", "Index", new { sortOrder = ViewBag.DateSortParm, currentFilter = ViewBag.CurrentFilter })
+        </th>
+
+        <th>
+            Last Known Postcode
         </th>
         <th>
             Description
@@ -40,34 +44,37 @@
         <th></th>
     </tr>
 
-    @foreach (var item in Model)
-    {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.petName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.petTypes)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.missingDate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Description)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Reward)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.petId }) |
-                @Html.ActionLink("Details", "Details", new { id = item.petId }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.petId })
-            </td>
-        </tr>
-    }
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.petName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.petTypes)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.missingDate)
+        </td>
+         <td>
+            @Html.DisplayFor(modelItem => item.Postcode)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Reward)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.petId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.petId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.petId })
+        </td>
+    </tr>
+}
 
 </table>
 <br />
 Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
 @Html.PagedListPager(Model, page => Url.Action("Index",
     new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))
+
