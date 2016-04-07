@@ -13,5 +13,7 @@ namespace asp.net_MVC.Models
             : base("DefaultConnection")
         {
         }
+
+        public System.Data.Entity.DbSet<asp.net_MVC.Models.Pet> Pets { get; set; }
     }
 }
