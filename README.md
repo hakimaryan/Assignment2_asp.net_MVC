@@ -1,7 +1,7 @@
 # Assignment2_asp.net_MVC
-to start runnig the program:
+To start the program:
 
-1. Download the completed project.
+1. Download the project.
 2. Open visual studio 2013 or 2015 and open the project.
 3. Open the application root Web.config file and Find  the <connectionStrings>  element
 4. Add the connection string of .mdf file to the <connectionStrings>  element in the Web.config file.
