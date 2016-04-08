@@ -47,6 +47,5 @@ namespace asp.net_MVC.Controllers
 
             return View();
         }
-
     }
 }

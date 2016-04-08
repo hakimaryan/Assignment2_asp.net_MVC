@@ -7,22 +7,6 @@
 <h2>Create</h2>
 
 
-
-<script language="javascript">
-    function openPopupWindow() {
-        window.open('/Pets/PopupPage/', 'Page', "width=500, height=350");
-        return false;
-    }
-</script>
-
-    <br />
-    <div>
-        <input type="submit" value="Click To Open" onclick="javascript:return openPopupWindow();" />
-    </div>
-
-
-
-
 @using (Html.BeginForm()) 
 {
     @Html.AntiForgeryToken()
