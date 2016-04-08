@@ -1,17 +1,145 @@
 ﻿@{
-    ViewBag.Title = "Report";
+    ViewBag.Title = "Directions Page";
 }
-<h2>@ViewBag.Title.</h2>
-<h3>@ViewBag.Message</h3>
+<h3>
+    Directions to Super Market</h3>
+<div id="askPermission">
+    We can quickly direct you to the nearest store. Can we use your location information?
+    <br />
+    (Click No to provide address manually)
+    <input id="yesLocation" type="button" value="Yes" />
+    <input id="noLocation" type="button" value="No" />
+</div>
+<div id="manualEntry">
+    Your current location
+    <input id="manualAddress" type="text" style="width: 500px" />
+    <input id="getManualDirections" type="button" value="Get Directions" />
+</div>
+<div id="mapContainer" style="height: 500px">
+    <div style="float: left">
+        <div id="directionsMap" style="float: none; position: relative; width: 720px; height: 400px">
+        </div>
+    </div>
+    <div id="directionsList" style="float: left; overflow: auto; width: 250px; height: 400px">
+    </div>
+</div>
+<script type="text/javascript" src="http://ecn.dev.virtualearth.net/mapcontrol/mapcontrol.ashx?v=7.0"></script>
+<script type="text/javascript">
+    $(function () {
+        var map = null;
+        var directionsManager = null;
+        var location = null;
+        var STORE_LOCATION = "San Jose, CA";
 
-<address>
-    One Microsoft Way<br />
-    Redmond, UK LS1 1PP<br />
-    <abbr title="Phone">Phone:</abbr>
-    01132-000000
-</address>
+        $("#manualEntry").hide();
 
-<address>
-    <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
-    <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
-</address>
+        $("#yesLocation").click(function () {
+            $("#askPermission").hide();
+            loadMap();
+            // Get the location
+            var options = {
+                enableHighAccuracy: true,
+                timeout: 20000,
+                maximumAge: 2000
+            };
+            navigator.geolocation.getCurrentPosition(showPosition, positionError, options);
+        });
+
+        function loadMap() {
+            // Initialize the map
+            if (!map) {
+                map = new Microsoft.Maps.Map(document.getElementById("directionsMap"),
+                         { credentials: "AnytwRR35RZy6dxlt4BEAmhqyt-JljTEIk9rda4eUdszfA2O-TrWFEjDFkTrTeMp" });
+            }
+        }
+
+        function showPosition(position) {
+            map.entities.clear();
+            if (position) {
+                location = position.coords;
+                map.setView({ zoom: 15, center: new Microsoft.Maps.Location(location.lattitude, location.longitude) })
+            }
+            if (!directionsManager) {
+                Microsoft.Maps.loadModule('Microsoft.Maps.Directions', { callback: createDirectionsManager });
+            }
+            else {
+                createDirectionsManager();
+            }
+        }
+
+        function createDirectionsManager() {
+            var displayMessage;
+            if (!directionsManager) {
+                directionsManager = new Microsoft.Maps.Directions.DirectionsManager(map);
+                displayMessage = 'Directions Module loaded\n';
+                displayMessage += 'Directions Manager loaded';
+            }
+            directionsManager.resetDirections();
+            directionsErrorEventObj = Microsoft.Maps.Events.addHandler(directionsManager, 'directionsError', directionsError);
+            directionsUpdatedEventObj = Microsoft.Maps.Events.addHandler(directionsManager, 'directionsUpdated', directionsUpdated);
+            createDrivingRoute(location);
+        }
+
+        function directionsUpdated() {
+            // Show Success message if required
+        }
+        function directionsError(args) {
+            // Show Error message if required
+        }
+
+        function createDrivingRoute(coords) {
+            if (!directionsManager) { createDirectionsManager(); }
+            directionsManager.resetDirections();
+            // Set Route Mode to driving 
+            directionsManager.setRequestOptions({ routeMode: Microsoft.Maps.Directions.RouteMode.driving });
+            var fromWayPoint = null;
+            if (coords != null) {
+                fromWayPoint = new Microsoft.Maps.Directions.Waypoint(
+                                {
+                                    location: new Microsoft.Maps.Location(coords.latitude, coords.longitude) 
+                                });
+                directionsManager.addWaypoint(fromWayPoint);
+            }
+            else {
+                fromWayPoint = new Microsoft.Maps.Directions.Waypoint({ address: $("#manualAddress").val() });
+                directionsManager.addWaypoint(fromWayPoint);
+            }
+            var toWayPoint = new Microsoft.Maps.Directions.Waypoint({ address: STORE_LOCATION });
+            directionsManager.addWaypoint(toWayPoint);
+            // Set the element in which the itinerary will be rendered
+            directionsManager.setRenderOptions({ itineraryContainer: document.getElementById('directionsList') });
+            directionsManager.calculateDirections();
+        }
+
+        $("#noLocation").click(function () {
+            $("#askPermission").hide();
+            showManualEntry();
+        });
+
+        function showManualEntry() {
+            $("#manualEntry").show();
+        }
+        
+        $("#getManualDirections").click(function () {
+            loadMap();
+            showPosition(null);
+        });
+
+        function positionError(position) {
+            switch (position.code) {
+                case 1:
+                    showManualEntry();
+                    break;
+                case 2:
+                    showManualEntry();
+                    break;
+                case 3:
+                    showManualEntry();
+                    break;
+                default:
+                    break;
+            }
+        }
+
+    });
+</script>

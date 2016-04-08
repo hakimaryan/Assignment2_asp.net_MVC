@@ -164,5 +164,13 @@ namespace asp.net_MVC.Controllers
             }
             base.Dispose(disposing);
         }
+        //popup window
+        public ActionResult PopupPage()
+        {
+
+            ViewBag.PopupValue = "Seems suspicious,  too many pets lost at the same day CALL 999";
+            return View();
+        }
+
     }
 }
