@@ -12,6 +12,8 @@ namespace asp.net_MVC.Controllers
     public class PetsController : Controller
     {
         private PetDBContext db = new PetDBContext();
+        string pCode = "LS9 7NR";
+        int count;
 
         // GET: Pet
         public ActionResult Index(string sortOrder, string currentFilter, string searchString, int? page)
@@ -54,7 +56,7 @@ namespace asp.net_MVC.Controllers
                     break;
             }
 
-            int pageSize = 7;
+            int pageSize = 10;
             int pageNumber = (page ?? 1);
             return View(pets.ToPagedList(pageNumber, pageSize));
             // return View(db.Pets.ToList());
@@ -79,6 +81,7 @@ namespace asp.net_MVC.Controllers
         // GET: Pets/Create
         public ActionResult Create()
         {
+
             return View();
         }
 
@@ -89,15 +92,32 @@ namespace asp.net_MVC.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "petId,petName,petTypes,missingDate,Description,Postcode,Reward")] Pet pet)
         {
+            
             if (ModelState.IsValid)
             {
                 db.Pets.Add(pet);
                 db.SaveChanges();
-                return RedirectToAction("Index");
-            }
+          
+                var res1 = db.Pets.OrderByDescending(x => x.Postcode).Take(10);
+       
+                count = res1.Count();
 
+                return RedirectToAction("Index");
+                // return PopupPage(); 
+               
+            }
             return View(pet);
         }
+
+        //popup window
+        public ActionResult PopupPage()
+        {
+
+            ViewBag.PopupValue = ("Seems suspicious, " + count +" pets lost at the same Postcode. CALL 999 or FBI");
+            
+            return View();
+        }
+
 
         // GET: Pets/Edit/5
         public ActionResult Edit(int? id)
@@ -164,13 +184,6 @@ namespace asp.net_MVC.Controllers
             }
             base.Dispose(disposing);
         }
-        //popup window
-        public ActionResult PopupPage()
-        {
-
-            ViewBag.PopupValue = "Seems suspicious,  too many pets lost at the same day CALL 999";
-            return View();
-        }
-
+    
     }
 }
