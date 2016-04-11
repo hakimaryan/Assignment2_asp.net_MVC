@@ -8,10 +8,6 @@ using System.ComponentModel.DataAnnotations;
 
 namespace asp.net_MVC.Models
 {
-    public enum PetTypes
-    {
-        Cat, Dog, Rabbit, Snake, Ferret, Lizard, Others
-    }
 
     public class Pet
     {
@@ -33,11 +29,16 @@ namespace asp.net_MVC.Models
         public string Description { get; set; }
         public string Postcode { get; set; }
         public decimal Reward { get; set; }
+        //bcollection of files as a property to the Pet class
+        public virtual ICollection<File> Files { get; set; }
+        public virtual ICollection<FilePath> FilePaths { get; set; }
     }
 
     public class PetDBContext : DbContext
     {
         public DbSet<Pet> Pets { get; set; }
-    }
+        public DbSet<File> Files { get; set; }
 
+        public DbSet<FilePath> FilePaths { get; set; }
+    }
 }

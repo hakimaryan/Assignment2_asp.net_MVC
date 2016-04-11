@@ -6,6 +6,9 @@ using System.Net;
 using System.Web.Mvc;
 using asp.net_MVC.Models;
 using PagedList;
+using System.Collections.Generic;
+using System.Web;
+using System.Data.Entity.Infrastructure;
 
 namespace asp.net_MVC.Controllers
 {
@@ -70,7 +73,8 @@ namespace asp.net_MVC.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Pet pet = db.Pets.Find(id);
+            //this line fetches all files associated with the pet regardless of type.
+            Pet pet = db.Pets.Include(s => s.Files).SingleOrDefault(s => s.petId == id);
             if (pet == null)
             {
                 return HttpNotFound();
@@ -90,11 +94,26 @@ namespace asp.net_MVC.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "petId,petName,petTypes,missingDate,Description,Postcode,Reward")] Pet pet)
+        public ActionResult Create([Bind(Include = "petId,petName,petTypes,missingDate,Description,Postcode,Reward")] Pet pet, System.Web.HttpPostedFileBase upload)
         {
             
             if (ModelState.IsValid)
             {
+                if (upload != null && upload.ContentLength > 0)
+                {
+                    var avatar = new File
+                    {
+                        FileName = System.IO.Path.GetFileName(upload.FileName),
+                        FileType = FileType.petImage,
+                        ContentType = upload.ContentType
+                    };
+                    using (var reader = new System.IO.BinaryReader(upload.InputStream))
+                    {
+                        avatar.Content = reader.ReadBytes(upload.ContentLength);
+                    }
+                    pet.Files = new List<File> { avatar };
+                }
+
                 db.Pets.Add(pet);
                 db.SaveChanges();
           
@@ -126,7 +145,7 @@ namespace asp.net_MVC.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Pet pet = db.Pets.Find(id);
+            Pet pet = db.Pets.Include(s => s.Files).SingleOrDefault(s => s.petId == id);
             if (pet == null)
             {
                 return HttpNotFound();
@@ -137,17 +156,50 @@ namespace asp.net_MVC.Controllers
         // POST: Pets/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
+        [HttpPost, ActionName("Edit")]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "petId,petName,petTypes,missingDate,Description,Postcode,Reward")] Pet pet)
+        public ActionResult EditPost(int? id, HttpPostedFileBase upload)
         {
-            if (ModelState.IsValid)
+            if (id == null)
             {
-                db.Entry(pet).State = EntityState.Modified;
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            return View(pet);
+            var petToUpdate = db.Pets.Find(id);
+            if (TryUpdateModel(petToUpdate, "",
+               new string[] { "petId,petName,petTypes,missingDate,Description,Postcode,Reward" }))
+            {
+                try
+                {
+                    if (upload != null && upload.ContentLength > 0)
+                    {
+                        if (petToUpdate.Files.Any(f => f.FileType == FileType.petImage))
+                        {
+                            db.Files.Remove(petToUpdate.Files.First(f => f.FileType == FileType.petImage));
+                        }
+                        var avatar = new File
+                        {
+                            FileName = System.IO.Path.GetFileName(upload.FileName),
+                            FileType = FileType.petImage,
+                            ContentType = upload.ContentType
+                        };
+                        using (var reader = new System.IO.BinaryReader(upload.InputStream))
+                        {
+                            avatar.Content = reader.ReadBytes(upload.ContentLength);
+                        }
+                        petToUpdate.Files = new List<File> { avatar };
+                    }
+                    db.Entry(petToUpdate).State = EntityState.Modified;
+                    db.SaveChanges();
+
+                    return RedirectToAction("Index");
+                }
+                catch (RetryLimitExceededException /* dex */)
+                {
+                    //Log the error (uncomment dex variable name and add a line here to write a log.
+                    ModelState.AddModelError("", "Unable to save changes. Try again, and if the problem persists, see your system administrator.");
+                }
+            }
+            return View(petToUpdate);
         }
 
         // GET: Pets/Delete/5
