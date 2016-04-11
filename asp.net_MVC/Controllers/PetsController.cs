@@ -9,6 +9,7 @@ using PagedList;
 using System.Collections.Generic;
 using System.Web;
 using System.Data.Entity.Infrastructure;
+using asp.net_MVC.DataContexts;
 
 namespace asp.net_MVC.Controllers
 {
@@ -83,6 +84,7 @@ namespace asp.net_MVC.Controllers
         }
 
         // GET: Pets/Create
+        [Authorize]
         public ActionResult Create()
         {
 
@@ -92,6 +94,7 @@ namespace asp.net_MVC.Controllers
         // POST: Pets/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "petId,petName,petTypes,missingDate,Description,Postcode,Reward")] Pet pet, System.Web.HttpPostedFileBase upload)
@@ -139,6 +142,7 @@ namespace asp.net_MVC.Controllers
 
 
         // GET: Pets/Edit/5
+        [Authorize]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -156,6 +160,7 @@ namespace asp.net_MVC.Controllers
         // POST: Pets/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [Authorize]
         [HttpPost, ActionName("Edit")]
         [ValidateAntiForgeryToken]
         public ActionResult EditPost(int? id, HttpPostedFileBase upload)
@@ -203,6 +208,7 @@ namespace asp.net_MVC.Controllers
         }
 
         // GET: Pets/Delete/5
+        [Authorize]
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -218,6 +224,7 @@ namespace asp.net_MVC.Controllers
         }
 
         // POST: Pets/Delete/5
+        [Authorize]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)

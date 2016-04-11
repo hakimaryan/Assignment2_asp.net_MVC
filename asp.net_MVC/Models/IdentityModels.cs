@@ -7,13 +7,6 @@ namespace asp.net_MVC.Models
     {
     }
 
-    public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
-    {
-        public ApplicationDbContext()
-            : base("DefaultConnection")
-        {
-        }
-
-        public System.Data.Entity.DbSet<asp.net_MVC.Models.Pet> Pets { get; set; }
-    }
+        //public System.Data.Entity.DbSet<asp.net_MVC.Models.Pet> Pets { get; set; }
+ 
 }

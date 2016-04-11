@@ -9,6 +9,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.Owin.Security;
 using asp.net_MVC.Models;
+using asp.net_MVC.DataContexts;
 
 namespace asp.net_MVC.Controllers
 {
@@ -16,7 +17,7 @@ namespace asp.net_MVC.Controllers
     public class AccountController : Controller
     {
         public AccountController()
-            : this(new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(new ApplicationDbContext())))
+            : this(new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(new IdentityDB())))
         {
         }
 

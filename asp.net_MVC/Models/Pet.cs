@@ -34,11 +34,9 @@ namespace asp.net_MVC.Models
         public virtual ICollection<FilePath> FilePaths { get; set; }
     }
 
-    public class PetDBContext : DbContext
-    {
-        public DbSet<Pet> Pets { get; set; }
-        public DbSet<File> Files { get; set; }
-
-        public DbSet<FilePath> FilePaths { get; set; }
-    }
+    //public class PetDBContext : DbContext
+    //{
+        //public DbSet<Pet> Pets { get; set; }
+        //public DbSet<File> Files { get; set; }
+        //public DbSet<FilePath> FilePaths { get; set; }
 }
