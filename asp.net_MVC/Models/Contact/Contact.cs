@@ -27,4 +27,3 @@ namespace asp.net_MVC.Models
         public string message { get; set; }
     }
 }
-
