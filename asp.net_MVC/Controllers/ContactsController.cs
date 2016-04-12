@@ -29,7 +29,6 @@ namespace asp.net_MVC.Controllers
             return View();
         }
 
-
         // GET: Contacts/Details/5
         public ActionResult Details(int? id)
         {
